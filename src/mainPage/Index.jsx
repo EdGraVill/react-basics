@@ -1,8 +1,26 @@
 import React from 'react';
 
+import './normalize.css';
+import Nav from '../Nav';
+
 const Index = () => (
   <div>
-    <nav /> {/* First RB */}
+    <Nav
+      links={[{
+        href: '/',
+        title: 'Inicio',
+        icon: 'home',
+      }, {
+        href: '/componentes',
+        title: 'Componentes',
+        icon: 'cubes',
+        links: [{
+          href: '/nav',
+          title: 'Nav',
+          icon: 'home',
+        }],
+      }]}
+    />
     <header>
       React Basics
     </header>

@@ -3,6 +3,8 @@ import React from 'react';
 import './normalize.css';
 import Nav from '../Nav';
 
+const { log } = console;
+
 const Index = () => (
   <div>
     <Nav
@@ -25,13 +27,13 @@ const Index = () => (
         }],
       }]}
       search={{
-        size: 'small',
+        size: 'medium',
         placeholder: 'Presiona Enter para buscar',
         onChange(value) {
-          console.log(value);
+          log(value);
         },
         onSubmit(value) {
-          console.log(value);
+          log(value);
         },
       }}
     />

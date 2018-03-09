@@ -7,7 +7,7 @@ type PropsType = {
   onChange: ?(value: string) => any,
   onSubmit: ?(value: string) => any,
   tabIndex: number,
-  width?: string | number,
+  width?: string,
 }
 
 const Search = ({
@@ -21,12 +21,14 @@ const Search = ({
   let searchInput: ?HTMLInputElement;
   let searchBar: ?HTMLDivElement;
 
+  const w = typeof width === 'number' ? `${width}px` : width;
+
   return (
     <div className={`nav__search nav__search--${size}`}>
       <div
         className="nav__searchBar"
         ref={(ref) => { searchBar = ref; }}
-        style={size === 'big' ? { width } : {}}
+        style={size === 'big' ? { width: w } : {}}
       >
         <i
           className="fas fa-search"
@@ -62,7 +64,7 @@ const Search = ({
             }
 
             if (size !== 'big' && searchBar) {
-              searchBar.style.width = '30rem';
+              searchBar.style.width = w;
             }
 
             const searchButton = document.getElementById('searchButton');

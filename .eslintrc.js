@@ -5,8 +5,9 @@ module.exports = {
   globals: {
     document: true,
     window: true,
-    HTMLElement: true,
     HTMLAnchorElement: true,
     HTMLDivElement: true,
+    HTMLElement: true,
+    HTMLInputElement: true,
   }
 };

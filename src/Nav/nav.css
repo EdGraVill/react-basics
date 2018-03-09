@@ -5,6 +5,16 @@
   width: 100%;
 }
 
+.nav *:focus,
+.nav *:active {
+  outline: none;
+}
+
+.nav input:focus,
+.nav input:active {
+  box-shadow: 0 0 3pt 2pt rgba(0, 0, 0, 0.2);
+}
+
 .nav__container {
   align-items: stretch;
   display: flex;
@@ -90,4 +100,98 @@
 
 .nav__brandName {
   white-space: nowrap;
+}
+
+.nav__search {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 2rem;
+  position: relative;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.nav__searchBar {
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 30rem;
+  position: relative;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.nav__searchBar > i {
+  border-radius: 50%;
+  color: #888;
+  cursor: text;
+  font-size: .8rem;
+  left: 0;
+  padding: .5rem;
+  position: absolute;
+}
+
+.nav__searchBar > i:last-of-type {
+  cursor: pointer;
+  left: inherit;
+  padding: .5rem;
+  right: 0;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.nav__searchBar > i:last-of-type:hover {
+  color: #000;
+}
+
+.nav__searchInput::-webkit-search-cancel-button {
+  display: none;
+}
+
+.nav__searchInput {
+  border: none;
+  border-radius: 2rem;
+  font-family: sans-serif;
+  font-size: 1rem;
+  line-height: 1rem;
+  padding: .3rem 1.5rem .3rem 1.7rem;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  width: 100%;
+}
+
+.nav__search--medium {
+  width: 7.25rem;
+}
+
+.nav__search--medium > .nav__searchBar {
+  position: absolute;
+  width: 5.5rem;
+}
+
+.nav__search--medium > .nav__searchBar > i:last-of-type {
+  overflow: hidden;
+  padding: .5rem 0;
+  width: 0;
+}
+
+.nav__search--medium > .nav__searchBar > .nav__searchInput {
+  padding: .3rem .5rem .3rem 1.7rem;
+}
+
+.nav__search--small {
+  width: 2.25rem;
+}
+
+.nav__search--small > .nav__searchBar {
+  position: absolute;
+  width: 1.75rem;
+}
+
+.nav__search--small > .nav__searchBar > i:last-of-type {
+  overflow: hidden;
+  padding: .5rem 0;
+  width: 0;
+}
+
+.nav__search--small > .nav__searchBar > .nav__searchInput {
+  padding: .3rem .1rem .3rem 1.7rem;
 }

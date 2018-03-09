@@ -8,6 +8,7 @@ import './nav.css';
 import Link from './Link';
 import Dropdown from './Dropdown';
 import Brand from './Brand';
+import Search from './Search';
 
 type PropsType = {
   backgroundColor?: string,
@@ -27,6 +28,13 @@ type PropsType = {
       icon?: string,
     }>,
   }>,
+  search: ?{
+    size?: 'big' | 'medium' | 'small',
+    placeholder?: string,
+    onChange: ?(value: string) => any,
+    onSubmit: ?(value: string) => any,
+    width?: number | string,
+  },
   style?: Object,
 }
 
@@ -36,6 +44,7 @@ const Nav = ({
   color = '#ecf0f1',
   height = 48,
   links,
+  search,
   style = {},
 } : PropsType) => {
   let h: number = height || 64;
@@ -72,10 +81,21 @@ const Nav = ({
                 index={i}
                 isMobile={isMobile}
                 link={link}
+                key={link.href}
               />
             );
           })}
         </div>
+        {search && (
+          <Search
+            size={search.size || 'medium'}
+            placeholder={search.placeholder || 'Type something to search'}
+            onChange={search.onChange}
+            onSubmit={search.onSubmit}
+            tabIndex={(links && links.length + 1) || 2}
+            width={search.width}
+          />
+        )}
       </div>
     </nav>
   );

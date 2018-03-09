@@ -23,36 +23,9 @@ const Index = () => (
           title: 'Nav',
           icon: 'th-large',
         }],
-      }, {
-        href: '/componentes',
-        title: 'Componentes',
-        icon: 'cubes',
-        links: [{
-          href: '/nav',
-          title: 'Nav',
-          icon: 'th-large',
-        }],
-      }, {
-        href: '/componentes',
-        title: 'Componentes',
-        icon: 'cubes',
-        links: [{
-          href: '/nav',
-          title: 'Nav',
-          icon: 'th-large',
-        }],
-      }, {
-        href: '/componentes',
-        title: 'Componentes',
-        icon: 'cubes',
-        links: [{
-          href: '/nav',
-          title: 'Nav',
-          icon: 'th-large',
-        }],
       }]}
       search={{
-        size: 'medium',
+        size: 'small',
         placeholder: 'Presiona Enter para buscar',
         onChange(value) {
           console.log(value);

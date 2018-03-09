@@ -6,10 +6,32 @@ import Nav from '../Nav';
 const Index = () => (
   <div>
     <Nav
+      brand={{
+        name: 'React Basics',
+        icon: 'react',
+      }}
       links={[{
         href: '/',
         title: 'Inicio',
         icon: 'home',
+      }, {
+        href: '/componentes',
+        title: 'Componentes',
+        icon: 'cubes',
+        links: [{
+          href: '/nav',
+          title: 'Nav',
+          icon: 'th-large',
+        }],
+      }, {
+        href: '/componentes',
+        title: 'Componentes',
+        icon: 'cubes',
+        links: [{
+          href: '/nav',
+          title: 'Nav',
+          icon: 'th-large',
+        }],
       }, {
         href: '/componentes',
         title: 'Componentes',

@@ -6,5 +6,6 @@ module.exports = {
     document: true,
     window: true,
     HTMLDivElement: true,
+    HTMLAnchorElement: true,
   }
 };

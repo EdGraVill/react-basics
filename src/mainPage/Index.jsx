@@ -17,7 +17,16 @@ const Index = () => (
         links: [{
           href: '/nav',
           title: 'Nav',
-          icon: 'home',
+          icon: 'th-large',
+        }],
+      }, {
+        href: '/componentes',
+        title: 'Componentes',
+        icon: 'cubes',
+        links: [{
+          href: '/nav',
+          title: 'Nav',
+          icon: 'th-large',
         }],
       }]}
     />

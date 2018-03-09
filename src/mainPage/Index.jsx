@@ -51,6 +51,16 @@ const Index = () => (
           icon: 'th-large',
         }],
       }]}
+      search={{
+        size: 'medium',
+        placeholder: 'Presiona Enter para buscar',
+        onChange(value) {
+          console.log(value);
+        },
+        onSubmit(value) {
+          console.log(value);
+        },
+      }}
     />
     <header>
       React Basics

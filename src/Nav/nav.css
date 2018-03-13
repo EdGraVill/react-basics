@@ -1,0 +1,245 @@
+.nav {
+  align-items: stretch;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.nav *:focus,
+.nav *:active {
+  outline: none;
+}
+
+.nav input:focus,
+.nav input:active {
+  box-shadow: 0 0 3pt 2pt rgba(0, 0, 0, 0.2);
+}
+
+.nav__container {
+  align-items: stretch;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  max-width: 1440px;
+  width: 100%;
+}
+
+.nav__navbar {
+  align-items: flex-start;
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+}
+
+.nav__linkContainer {
+  align-items: center;
+  box-sizing: border-box;
+  color: #ecf0f1;
+  display: flex;
+  font-family: sans-serif;
+  font-size: 1.1rem;
+  /* font-weight: bold; */
+  padding: 0 1.5rem;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  user-select: none;
+}
+
+.nav__linkContainer:hover {
+  background-color: rgba(0, 0, 0, .1);
+}
+
+.nav__linkContainer > i {
+  font-size: .8rem;
+  margin-right: .5rem;
+  opacity: 1;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.nav__linkContainer > i:last-child {
+  margin-right: 0;
+  margin-left: .5rem;
+}
+
+.nav__linksContainer {
+  border-radius: 0 0 .5rem .5rem;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.nav__linksContainer:hover {
+  height: 100%;
+}
+
+.nav__linksContainer > .nav__linkContainer {
+  width: 100%;
+}
+
+.nav__linksContainer:hover > .nav__linkContainer > i:last-child {
+  opacity: 0;
+}
+
+.nav__brand {
+  align-items: center;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  color: #ecf0f1;
+  display: flex;
+  font-family: sans-serif;
+  font-size: 1.1rem;
+  padding: 0 2rem;
+  user-select: none;
+}
+
+.nav__brand > i {
+  font-size: .8rem;
+  margin-right: .5rem;
+}
+
+.nav__brandName {
+  white-space: nowrap;
+}
+
+.nav__search {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 1rem;
+  position: relative;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.nav__searchBar {
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: calc(100vw - 4rem);
+  position: relative;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.nav__searchBar > i {
+  border-radius: 50%;
+  color: #888;
+  cursor: text;
+  font-size: .8rem;
+  left: 0;
+  padding: .5rem;
+  position: absolute;
+}
+
+.nav__searchBar > i:last-of-type {
+  cursor: pointer;
+  left: inherit;
+  padding: .5rem;
+  right: 0;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.nav__searchBar > i:last-of-type:hover {
+  color: #000;
+}
+
+.nav__searchInput::-webkit-search-cancel-button {
+  display: none;
+}
+
+.nav__searchInput {
+  border: none;
+  border-radius: 2rem;
+  font-family: sans-serif;
+  font-size: 1rem;
+  line-height: 1rem;
+  padding: .3rem 1.5rem .3rem 1.7rem;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  width: 100%;
+}
+
+.nav__search--medium {
+  width: 7.25rem;
+}
+
+.nav__search--medium > .nav__searchBar {
+  position: absolute;
+}
+
+.nav__search--medium > .nav__searchBar > i:last-of-type {
+  overflow: hidden;
+  padding: .5rem 0;
+  width: 0;
+}
+
+.nav__search--medium > .nav__searchBar > .nav__searchInput {
+  padding: .3rem .5rem .3rem 1.7rem;
+}
+
+.nav__search--small {
+  width: 2.25rem;
+}
+
+.nav__search--small > .nav__searchBar {
+  position: absolute;
+  width: 1.75rem;
+}
+
+.nav__search--small > .nav__searchBar > i:last-of-type {
+  overflow: hidden;
+  padding: .5rem 0;
+  width: 0;
+}
+
+.nav__search--small > .nav__searchBar > .nav__searchInput {
+  padding: .3rem .1rem .3rem 1.7rem;
+}
+
+.nav__userbox {
+  align-items: stretch;
+  display: flex;
+  justify-content: stretch;
+  position: relative;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.nav__userbox:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.nav__userbox:hover > .nav__userboxBox {
+  height: inherit;
+  opacity: .8;
+  padding: 1rem 2rem;
+}
+
+.nav__userboxText {
+  align-items: center;
+  color: #ecf0f1;
+  cursor: default;
+  display: flex;
+  font-family: sans-serif;
+  font-size: 1.1rem;
+  padding: 0 1rem;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.nav__userboxText > i {
+  font-size: .8rem;
+  padding-right: .5rem;
+}
+
+.nav__userboxBox {
+  align-items: flex-start;
+  border-radius: 0 0 .5rem .5rem;
+  display: flex;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}

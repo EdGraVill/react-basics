@@ -28,9 +28,10 @@ const Link = ({
     key={href}
     style={{ color, height, ...style }}
     ref={ref => anchorRef(ref || document.createElement('a'))}
+    itemProp="url"
   >
     {icon ? <i className={`fas fa-${icon}`} /> : null}
-    <span className="nav__linkTitle">{title}</span>
+    <span className="nav__linkTitle" itemProp="name">{title}</span>
     {dropdown && <i className="fas fa-angle-down" />}
   </a>
 );

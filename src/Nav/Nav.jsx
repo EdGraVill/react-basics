@@ -58,7 +58,12 @@ const Nav = ({
   if (height && height < 32) h = 32;
 
   return (
-    <nav className="nav" style={{ ...style, ...{ backgroundColor, height: h } }}>
+    <nav
+      className="nav"
+      style={{ ...style, ...{ backgroundColor, height: h } }}
+      itemScope
+      itemType="http://schema.org/SiteNavigationElement"
+    >
       <div className="nav__container">
         {brand && (brand.name || brand.icon) && (
           <Brand color={color} name={brand.name || ''} icon={brand.icon} />

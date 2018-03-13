@@ -46,6 +46,7 @@ class Index extends Component<{}, StateType> {
           search={{
             size: 'medium',
             placeholder: 'Presiona Enter para buscar',
+            mediumPlaceholder: 'Buscar',
             onChange(value) {
               log(value);
             },

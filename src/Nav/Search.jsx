@@ -2,19 +2,21 @@
 import React from 'react';
 
 type PropsType = {
-  size?: 'big' | 'medium' | 'small',
-  placeholder?: string,
+  mediumPlaceholder?: string,
   onChange: ?(value: string) => any,
   onSubmit: ?(value: string) => any,
+  placeholder?: string,
+  size?: 'big' | 'medium' | 'small',
   tabIndex: number,
   width?: string,
 }
 
 const Search = ({
-  size = 'medium',
-  placeholder = 'Type something to search',
+  mediumPlaceholder = 'Search',
   onChange,
   onSubmit,
+  placeholder = 'Type something to search',
+  size = 'medium',
   tabIndex,
   width = '20rem',
 }: PropsType) => {
@@ -28,7 +30,10 @@ const Search = ({
       <div
         className="nav__searchBar"
         ref={(ref) => { searchBar = ref; }}
-        style={size === 'big' ? { width: w } : {}}
+        style={{
+          ...size === 'big' ? { width: w } : {},
+          ...size === 'medium' ? { width: `${(mediumPlaceholder.length * 5.5) / 6}rem` } : {},
+        }}
       >
         <i
           className="fas fa-search"
@@ -46,7 +51,7 @@ const Search = ({
           className="nav__searchInput"
           placeholder={(() => {
             if (size === 'small') return '';
-            else if (size === 'medium') return 'Buscar';
+            else if (size === 'medium') return mediumPlaceholder;
             return placeholder;
           })()}
           onChange={() => {
@@ -87,7 +92,7 @@ const Search = ({
               }
 
               if (size === 'medium' && searchBar) {
-                searchBar.style.width = '5.5rem';
+                searchBar.style.width = `${(mediumPlaceholder.length * 5.5) / 6}rem`;
               } else if (size === 'small' && searchBar) {
                 searchBar.style.width = '1.75rem';
               }
@@ -125,8 +130,9 @@ const Search = ({
 };
 
 Search.defaultProps = {
-  size: 'medium',
+  mediumPlaceholder: 'Search',
   placeholder: 'Type something to search',
+  size: 'medium',
   width: '20rem',
 };
 

@@ -164,7 +164,6 @@
 
 .nav__search--medium > .nav__searchBar {
   position: absolute;
-  width: 5.5rem;
 }
 
 .nav__search--medium > .nav__searchBar > i:last-of-type {

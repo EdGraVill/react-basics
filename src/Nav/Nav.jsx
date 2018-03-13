@@ -30,6 +30,7 @@ type PropsType = {
     }>,
   }>,
   search: ?{
+    mediumPlaceholder?: string,
     size?: 'big' | 'medium' | 'small',
     placeholder?: string,
     onChange: ?(value: string) => any,
@@ -100,6 +101,7 @@ const Nav = ({
         </div>
         {search && (
           <Search
+            mediumPlaceholder={search.mediumPlaceholder}
             size={search.size || 'medium'}
             placeholder={search.placeholder || 'Type something to search'}
             onChange={search.onChange}

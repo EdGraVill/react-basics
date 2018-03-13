@@ -41,7 +41,7 @@ type PropsType = {
   userBox: ?{
     icon: string,
     text: string,
-    box: React.Element<'div'>,
+    box: React$Element<'div'>,
   },
 };
 

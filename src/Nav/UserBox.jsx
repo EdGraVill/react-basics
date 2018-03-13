@@ -3,7 +3,7 @@ import React from 'react';
 
 type PropsType = {
   backgroundColor?: string,
-  Box: ?React.Element<'div'>,
+  Box: ?() => any | ?React$Element<'div'>,
   icon: ?string,
   text: string,
 };
@@ -23,7 +23,7 @@ const UserBox = ({
     </div>
     {!!Box && (
       <div className="nav__userboxBox" style={{ backgroundColor }}>
-        <Box />
+        {Box()}
       </div>
     )}
   </div>

@@ -60,8 +60,10 @@ const Search = ({
           onKeyPress={(event) => {
             if (event.key === 'Enter') {
               if (onSubmit && searchInput) onSubmit(searchInput.value);
-              searchInput.value = '';
-              searchInput.blur();
+              if (searchInput) {
+                searchInput.value = '';
+                searchInput.blur();
+              }
             }
           }}
           onFocus={() => {
@@ -82,7 +84,7 @@ const Search = ({
             }
           }}
           onBlur={() => {
-            if (size !== 'big' && searchInput.value === '') {
+            if (size !== 'big' && searchInput && searchInput.value === '') {
               if (size === 'medium' && searchInput) {
                 searchInput.placeholder = 'Buscar';
                 searchInput.style.padding = '.3rem .5rem .3rem 1.7rem';
@@ -112,12 +114,12 @@ const Search = ({
           className="fas fa-angle-right"
           onClick={() => {
             if (onSubmit && searchInput) onSubmit(searchInput.value);
-            searchInput.value = '';
+            if (searchInput) searchInput.value = '';
           }}
           onKeyPress={(event) => {
             if (event.key === 'Enter') {
               if (onSubmit && searchInput) onSubmit(searchInput.value);
-              searchInput.value = '';
+              if (searchInput) searchInput.value = '';
             }
           }}
           role="button"

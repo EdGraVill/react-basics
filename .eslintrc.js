@@ -9,5 +9,6 @@ module.exports = {
     HTMLDivElement: true,
     HTMLElement: true,
     HTMLInputElement: true,
+    React$Element: true,
   }
 };

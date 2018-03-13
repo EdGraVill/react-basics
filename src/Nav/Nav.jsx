@@ -5,10 +5,11 @@ import { isMobile } from 'react-device-detect';
 import '../fontAwesome/fontawesome-all.css';
 import './nav.css';
 
-import Link from './Link';
-import Dropdown from './Dropdown';
 import Brand from './Brand';
+import Dropdown from './Dropdown';
+import Link from './Link';
 import Search from './Search';
+import UserBox from './UserBox';
 
 type PropsType = {
   backgroundColor?: string,
@@ -36,7 +37,12 @@ type PropsType = {
     width?: number | string,
   },
   style?: Object,
-}
+  userBox: ?{
+    icon: string,
+    text: string,
+    box: React.Element<'div'>,
+  },
+};
 
 const Nav = ({
   backgroundColor = '#4A5459',
@@ -46,6 +52,7 @@ const Nav = ({
   links,
   search,
   style = {},
+  userBox,
 } : PropsType) => {
   let h: number = height || 64;
   if (height && height < 32) h = 32;
@@ -93,7 +100,15 @@ const Nav = ({
             onChange={search.onChange}
             onSubmit={search.onSubmit}
             tabIndex={(links && links.length + 1) || 2}
-            width={search.width}
+            width={search.width ? `${search.width}` : undefined}
+          />
+        )}
+        {userBox && (
+          <UserBox
+            backgroundColor={backgroundColor}
+            Box={userBox.box}
+            icon={userBox.icon}
+            text={userBox.text}
           />
         )}
       </div>

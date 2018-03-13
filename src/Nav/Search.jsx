@@ -55,6 +55,8 @@ const Search = ({
           onKeyPress={(event) => {
             if (event.key === 'Enter') {
               if (onSubmit && searchInput) onSubmit(searchInput.value);
+              searchInput.value = '';
+              searchInput.blur();
             }
           }}
           onFocus={() => {
@@ -75,25 +77,27 @@ const Search = ({
             }
           }}
           onBlur={() => {
-            if (size === 'medium' && searchInput) {
-              searchInput.placeholder = 'Buscar';
-              searchInput.style.padding = '.3rem .5rem .3rem 1.7rem';
-            } else if (size === 'small' && searchInput) {
-              searchInput.placeholder = '';
-              searchInput.style.padding = '.3rem .1rem .3rem 1.7rem';
-            }
+            if (size !== 'big' && searchInput.value === '') {
+              if (size === 'medium' && searchInput) {
+                searchInput.placeholder = 'Buscar';
+                searchInput.style.padding = '.3rem .5rem .3rem 1.7rem';
+              } else if (size === 'small' && searchInput) {
+                searchInput.placeholder = '';
+                searchInput.style.padding = '.3rem .1rem .3rem 1.7rem';
+              }
 
-            if (size === 'medium' && searchBar) {
-              searchBar.style.width = '5.5rem';
-            } else if (size === 'small' && searchBar) {
-              searchBar.style.width = '1.75rem';
-            }
+              if (size === 'medium' && searchBar) {
+                searchBar.style.width = '5.5rem';
+              } else if (size === 'small' && searchBar) {
+                searchBar.style.width = '1.75rem';
+              }
 
-            const searchButton = document.getElementById('searchButton');
+              const searchButton = document.getElementById('searchButton');
 
-            if (size !== 'big' && searchButton) {
-              searchButton.style.width = '0';
-              searchButton.style.padding = '.5rem 0';
+              if (size !== 'big' && searchButton) {
+                searchButton.style.width = '0';
+                searchButton.style.padding = '.5rem 0';
+              }
             }
           }}
           ref={(ref) => { searchInput = ref; }}
@@ -103,10 +107,12 @@ const Search = ({
           className="fas fa-angle-right"
           onClick={() => {
             if (onSubmit && searchInput) onSubmit(searchInput.value);
+            searchInput.value = '';
           }}
           onKeyPress={(event) => {
             if (event.key === 'Enter') {
               if (onSubmit && searchInput) onSubmit(searchInput.value);
+              searchInput.value = '';
             }
           }}
           role="button"

@@ -5,7 +5,7 @@ type PropsType = {
   color?: string,
   icon: ?string,
   name: string,
-}
+};
 
 const Brand = ({ color = '#ecf0f1', icon, name }: PropsType) => (
   <div className="nav__brand" style={{ color }}>

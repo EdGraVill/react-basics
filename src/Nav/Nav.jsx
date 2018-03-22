@@ -60,16 +60,16 @@ const Nav = ({
 
   return (
     <nav
-      className="nav"
+      className="rbnav"
       style={{ ...style, ...{ backgroundColor, height: h } }}
       itemScope
       itemType="http://schema.org/SiteNavigationElement"
     >
-      <div className="nav__container">
+      <div className="rbnav__container">
         {brand && (brand.name || brand.icon) && (
           <Brand color={color} name={brand.name || ''} icon={brand.icon} />
         )}
-        <div className="nav__navbar">
+        <div className="rbnav__navbar">
           {!links && links instanceof Array && !links.length ? (
             <Link href="/" title="Inicio" icon="home" height={h} color={color} />
           ) : links instanceof Array && links.map((link, i) => {

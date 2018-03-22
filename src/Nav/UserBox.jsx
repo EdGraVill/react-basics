@@ -14,15 +14,15 @@ const UserBox = ({
   icon,
   text,
 }: PropsType) => (
-  <div className="nav__userbox">
-    <div className="nav__userboxText">
+  <div className="rbnav__userbox">
+    <div className="rbnav__userboxText">
       {!!icon && (
         <i className={`fas fa-${icon}`} />
       )}
       {text}
     </div>
     {!!Box && (
-      <div className="nav__userboxBox" style={{ backgroundColor }}>
+      <div className="rbnav__userboxBox" style={{ backgroundColor }}>
         {Box()}
       </div>
     )}

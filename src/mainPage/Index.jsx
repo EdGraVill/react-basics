@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 
 import './normalize.css';
 import Nav from '../Nav';
+import Button from '../Button';
 
 const { log } = console;
 
@@ -79,6 +80,7 @@ class Index extends Component<{}, StateType> {
         </header>
         <main>
           For Common Cases
+          <Button text="Hola" />
         </main>
       </div>
     );

@@ -35,7 +35,7 @@ const Dropdown = ({
   if (isMobile) {
     return (
       <div
-        className="nav__linksContainer"
+        className="rbnav__linksContainer"
         style={{ backgroundColor, height }}
         onClick={() => {
           linksContainer[index].style.height = `${(Number(link.links instanceof Array && link.links.length) + 1) * height}px`;
@@ -86,7 +86,7 @@ const Dropdown = ({
 
   return (
     <div
-      className="nav__linksContainer"
+      className="rbnav__linksContainer"
       style={{ backgroundColor, height }}
       onMouseEnter={() => {
         linksContainer[index].style.height = `${(Number(link.links instanceof Array && link.links.length) + 1) * height}px`;

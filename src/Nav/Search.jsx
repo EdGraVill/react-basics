@@ -28,7 +28,7 @@ const Search = ({
   return (
     <div className={`nav__search nav__search--${size}`}>
       <div
-        className="nav__searchBar"
+        className="rbnav__searchBar"
         ref={(ref) => { searchBar = ref; }}
         style={{
           ...size === 'big' ? { width: w } : {},
@@ -48,7 +48,7 @@ const Search = ({
         />
         <input
           type="search"
-          className="nav__searchInput"
+          className="rbnav__searchInput"
           placeholder={(() => {
             if (size === 'small') return '';
             else if (size === 'medium') return mediumPlaceholder;

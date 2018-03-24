@@ -8,12 +8,12 @@ type PropsType = {
 };
 
 const Brand = ({ color = '#ecf0f1', icon, name }: PropsType) => (
-  <div className="nav__brand" style={{ color }}>
+  <div className="rbnav__brand" style={{ color }}>
     {!!icon && (
       <i className={`fab fa-${icon}`} />
     )}
     {!!name && (
-      <span className="nav__brandName">
+      <span className="rbnav__brandName">
         {name}
       </span>
     )}

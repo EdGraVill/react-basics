@@ -24,14 +24,14 @@ const Link = ({
 }: PropsType) => (
   <a
     href={href}
-    className="nav__linkContainer"
+    className="rbnav__linkContainer"
     key={href}
     style={{ color, height, ...style }}
     ref={ref => anchorRef(ref || document.createElement('a'))}
     itemProp="url"
   >
     {icon ? <i className={`fas fa-${icon}`} /> : null}
-    <span className="nav__linkTitle" itemProp="name">{title}</span>
+    <span className="rbnav__linkTitle" itemProp="name">{title}</span>
     {dropdown && <i className="fas fa-angle-down" />}
   </a>
 );

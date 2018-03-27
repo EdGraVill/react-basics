@@ -26,7 +26,7 @@ const Search = ({
   const w = typeof width === 'number' ? `${width}px` : width;
 
   return (
-    <div className={`nav__search nav__search--${size}`}>
+    <div className={`rbnav__search rbnav__search--${size}`}>
       <div
         className="rbnav__searchBar"
         ref={(ref) => { searchBar = ref; }}

@@ -3,6 +3,7 @@
   "version": "0.3.0",
   "private": true,
   "dependencies": {
+    "hammerjs": "^2.0.8",
     "react": "^16.2.0",
     "react-device-detect": "^0.1.0",
     "react-dom": "^16.2.0",

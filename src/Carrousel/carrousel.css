@@ -1,0 +1,135 @@
+.rbcarrousel {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.rbcarrousel__images {
+  align-items: stretch;
+  display: flex;
+  flex-flow: row nowrap;
+  height: 100%;
+  position: relative;
+  transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+.rbcarrousel__image {
+  width: 100%;
+}
+
+.rbcarrousel__image:active {
+  outline: none;
+}
+
+.rbcarrousel__image > img {
+  display: block;
+  height: 100%;
+  object-fit: contain;
+  -webkit-user-drag: none;
+  width: 100%;
+}
+
+.rbcarrousel__indicators {
+  align-items: flex-end;
+  bottom: 10%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: auto;
+  position: absolute;
+  width: 100%;
+}
+
+.rbcarrousel__indicator {
+  background-color: transparent;
+  border: .1rem solid white;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.32), 0 3px 6px rgba(0, 0, 0, 0.46);
+  cursor: pointer;
+  height: .5rem;
+  margin: .1rem;
+  opacity: .5;
+  padding: 0;
+  transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+  width: .5rem;
+}
+
+.rbcarrousel__indicator--current {
+  background-color: white;
+}
+
+.rbcarrousel__indicators:hover {
+  -webkit-backdrop-filter: blur(3);
+}
+
+.rbcarrousel__indicators:hover > .rbcarrousel__indicator {
+  background-color: transparent;
+  border: .2rem solid white;
+  box-sizing: border-box;
+  height: 1rem;
+  margin: .5rem;
+  opacity: 1;
+  width: 1rem;
+}
+
+.rbcarrousel__indicators:hover > .rbcarrousel__indicator--current {
+  background-color: white;
+}
+
+.rbcarrousel__indicator:hover {
+  transform: scale(1.2);
+}
+
+.rbcarrousel__indicator:focus,
+.rbcarrousel__indicator:active {
+  outline: none;
+  transform: scale(1);
+}
+
+.rbcarrousel__thumbnails {
+  box-sizing: border-box;
+  display: flex;
+  height: 30%;
+  justify-content: flex-start;
+  overflow: hidden;
+  padding: .5rem;
+  position: relative;
+  width: 100%;
+}
+
+.rbcarrousel__thumbnail {
+  cursor: pointer;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  margin: 0 .5rem;
+  width: auto;
+  position: relative;
+  transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+  user-select: none;
+}
+
+.rbcarrousel__thumbnail:focus,
+.rbcarrousel__thumbnail:active {
+  outline: none;
+  transform: scale(1);
+}
+
+.rbcarrousel__thumbnail > img {
+  filter: grayscale(1);
+  height: 100%;
+  outline: 0 solid lightskyblue;
+  object-fit: contain;
+  transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+.rbcarrousel__thumbnail--current > img {
+  outline: .15rem solid lightskyblue;
+  filter: grayscale(0);
+}
+
+.rbcarrousel__thumbnail:hover > img {
+  transform: scale(1.2);
+}

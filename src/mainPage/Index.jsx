@@ -4,8 +4,10 @@ import React, { Component } from 'react';
 import './normalize.css';
 import Nav from '../Nav';
 import Button from '../Button';
+import Carrousel, { Thumbnails } from '../Carrousel';
 
 const { log } = console;
+const { alert } = window;
 
 type StateType = {
   username: string,
@@ -14,6 +16,8 @@ type StateType = {
   loaded: boolean,
   loading: boolean,
   range: number,
+  images: number,
+  position: number,
 };
 
 class Index extends Component<{}, StateType> {
@@ -24,6 +28,8 @@ class Index extends Component<{}, StateType> {
     loaded: false,
     loading: false,
     range: 0.5,
+    images: 5,
+    position: 0,
   };
 
   render() {
@@ -164,6 +170,64 @@ class Index extends Component<{}, StateType> {
           />
           <p>Loading: {this.state.loading ? 'true' : 'false'}</p>
           <p>Loaded: {this.state.loaded ? 'true' : 'false'}</p>
+          <Carrousel
+            data={(() => {
+              const data = [];
+              for (let index = 0; index < this.state.images; index += 1) {
+                data.push({
+                  src: `https://source.unsplash.com/random/${index}`,
+                  alt: `Image ${index + 1}`,
+                  onClick: () => {
+                    alert(`You pressed the ${index + 1}° image`);
+                  },
+                });
+              }
+              return data;
+            })()}
+            onSwipe={position => this.setState({ position })}
+            position={this.state.position}
+            style={{
+              height: 200,
+              width: 500,
+            }}
+          >
+            <Thumbnails
+              onClick={position => this.setState({ position })}
+            />
+          </Carrousel>
+          <p>Position: {this.state.position}</p>
+          <div>
+            <button
+              onClick={() => {
+                this.setState({ position: this.state.position - 1 });
+              }}
+            >
+              Menos
+            </button>
+            <button
+              onClick={() => {
+                this.setState({ position: this.state.position + 1 });
+              }}
+            >
+              Más
+            </button>
+          </div>
+          <div>
+            <button
+              onClick={() => {
+                this.setState({ images: this.state.images - 1 });
+              }}
+            >
+              Quitar
+            </button>
+            <button
+              onClick={() => {
+                this.setState({ images: this.state.images + 1 });
+              }}
+            >
+              Añadir
+            </button>
+          </div>
         </main>
       </div>
     );

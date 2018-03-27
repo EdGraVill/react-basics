@@ -1,5 +1,6 @@
 // @flow
 import React, { Component } from 'react';
+import Hammer from 'hammerjs';
 
 import './carrousel.css';
 
@@ -14,12 +15,40 @@ type PropsType = {
 };
 
 class Thumbnails extends Component<PropsType> {
+  componentDidMount() {
+    this.hammerHandler = new Hammer(this.thumbnailsContainer);
+
+    this.hammerHandler.on('panleft panright panend', (event) => {
+      if (event.type === 'panend') {
+        this.startLeft = Number(this.thumbnails[0].style.left.replace('px', ''));
+        this.startPosition = undefined;
+        this.thumbnails.forEach((element) => {
+          const thumbnail = element;
+
+          thumbnail.style.transition = 'all 0.3s cubic-bezier(.25, .8, .25, 1)';
+          thumbnail.style.pointerEvents = 'auto';
+        });
+      } else if (this.startPosition === undefined) {
+        this.startPosition = event.center.x;
+        this.thumbnails.forEach((element) => {
+          const thumbnail = element;
+
+          thumbnail.style.transition = 'initial';
+          thumbnail.style.pointerEvents = 'none';
+        });
+      } else {
+        this.thumbnails.forEach((element) => {
+          const thumbnail = element;
+
+          thumbnail.style.left = `${this.startLeft + (event.center.x - (this.startPosition || 0))}px`;
+        });
+      }
+    });
+  }
+
   componentDidUpdate() {
     this.fixLeft();
   }
-
-  thumbnailsContainer: HTMLDivElement;
-  thumbnails: Array<HTMLDivElement> = [];
 
   totalWidth(position: number): number {
     let total:number = 0;
@@ -40,7 +69,7 @@ class Thumbnails extends Component<PropsType> {
   fixLeft(): void {
     const { data, position } = this.props;
     const width: number = this.thumbnailsContainer.offsetWidth;
-    const pos = (position || 0) >= 0 ?
+    const pos: number = (position || 0) >= 0 ?
       (position || 0) % data.length :
       (data.length - 1) - ((Math.abs(position || 0) - 1) % data.length);
 
@@ -49,7 +78,15 @@ class Thumbnails extends Component<PropsType> {
 
       thumbnail.style.left = `${(((width / 2) - this.totalWidth(pos)) - (pos * 16)) + (this.thumbnails[pos].offsetWidth / 6)}px`;
     });
+
+    this.startLeft = Number(this.thumbnails[0].style.left.replace('px', '')) || 0;
   }
+
+  startLeft: ?number;
+  startPosition: ?number;
+  hammerHandler: Hammer;
+  thumbnailsContainer: HTMLDivElement;
+  thumbnails: Array<HTMLDivElement> = [];
 
   render() {
     const {

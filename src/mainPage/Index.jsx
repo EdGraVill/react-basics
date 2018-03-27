@@ -184,6 +184,7 @@ class Index extends Component<{}, StateType> {
               }
               return data;
             })()}
+            onSwipe={position => this.setState({ position })}
             position={this.state.position}
             style={{
               height: 200,

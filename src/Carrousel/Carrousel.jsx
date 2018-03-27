@@ -113,7 +113,7 @@ class Carrousel extends Component<PropsType> {
             </div>
           ))}
         </div>
-        {React.cloneElement(children, { data, position })}
+        {children && React.cloneElement(children, { data, position })}
         {indicator && (
           <Indicator
             data={data}

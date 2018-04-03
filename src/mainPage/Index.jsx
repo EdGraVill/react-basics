@@ -1,15 +1,55 @@
-import React from 'react';
+// @flow
+import React, { Fragment } from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import Nav from 'rb-navbar';
+
+import './normalize.css';
+import './styles.css';
+
+import Home from '../Home';
+import Components from '../Components';
+import Navbar from '../Navbar';
+import Button from '../Button';
+import Carrousel from '../Carrousel';
 
 const Index = () => (
-  <div>
-    <nav /> {/* First RB */}
-    <header>
-      React Basics
-    </header>
-    <main>
-      For Common Cases
-    </main>
-  </div>
+  <Router>
+    <Fragment>
+      <Nav
+        backgroundColor="#4A5459"
+        brand={{ name: 'React Basics' }}
+        color="#ecf0f1"
+        links={[{
+          href: '/',
+          title: 'Inicio',
+          icon: 'home',
+          AnchorComponent: <Link to="/" href="/" />,
+        }, {
+          href: '/components',
+          title: 'Componentes',
+          AnchorComponent: <Link to="/components" href="/components" />,
+          links: [{
+            href: '/navbar',
+            title: 'Navbar',
+            AnchorComponent: <Link to="/navbar" href="/navbar" />,
+          }, {
+            href: '/button',
+            title: 'Button',
+            AnchorComponent: <Link to="/button" href="/button" />,
+          }, {
+            href: '/carrousel',
+            title: 'Carrousel',
+            AnchorComponent: <Link to="/carrousel" href="/carrousel" />,
+          }],
+        }]}
+      />
+      <Route exact path="/" component={Home} />
+      <Route exact path="/components" component={Components} />
+      <Route exact path="/navbar" component={Navbar} />
+      <Route exact path="/button" component={Button} />
+      <Route exact path="/carrousel" component={Carrousel} />
+    </Fragment>
+  </Router>
 );
 
 export default Index;

@@ -1,4 +1,3 @@
-// @flow
 import React from 'react';
 
 import carrouselImg from './assets/IMG_0106.jpg';

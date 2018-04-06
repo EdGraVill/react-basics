@@ -27,15 +27,21 @@ class ButtonPage extends Component {
         </header>
         <main>
           <article>
+            <p>
+              If you are searching for an english guide, please go to{' '}
+              <a href="https://github.com/EdGraVill/rb-buttons" target="_blank" rel="noopener noreferrer">https://github.com/EdGraVill/rb-buttons</a>
+            </p>
+          </article>
+          <article>
             <h2>Instalación</h2>
-            <p>Into your project{'\''}s root directory run the following command:</p>
-            <p>If you are using <strong>npm</strong> run below:</p>
+            <p>En el directorio raiz de tu proyecto, ejecuta el siguiente comando:</p>
+            <p><strong>npm</strong></p>
             <Prism language="powershell">
               {`
 npm i -P rb-buttons
               `}
             </Prism>
-            <p>If you are using <strong>yarn</strong> run below:</p>
+            <p><strong>yarn</strong></p>
             <Prism language="powershell">
               {`
 yarn add rb-buttons
@@ -49,7 +55,24 @@ yarn add rb-buttons
           <article>
             <h2>Implementación</h2>
             <p>
-              Para explicar la implementación, hay que entender que un mismo botón
+              Para implementarlo, primero debemos importar el componente a nuestro código:
+            </p>
+            <Prism language="jsx" lineHighlight="2">
+              {`
+import React from 'react';
+import Button from 'rb-buttons';
+
+// Básicamente se llama rb-buttons por dos razones:
+//
+// 1. Aunque es un botón, puede tomar diferentes formas,
+//    tanto que parecen varios botones en uno.
+//
+// 2. rb-button ya estaba ocupado :( como nombre de un
+//    paquete en npm.
+              `}
+            </Prism>
+            <p>
+              Y Para explicar la implementación, primero hay que entender que un mismo botón
               tiene diferentes tipos:
             </p>
             <div className="button__exampleContainer">
@@ -680,7 +703,10 @@ yarn build
                 <p>Crea el mejor componente y la mejor documentación que puedas.</p>
               </li>
               <li>
-                <p>Comparte este y otros React Basics con tus amigos desarrolladores. Podría ser útil para ellos.</p>
+                <p>
+                  Comparte este y otros React Basics con tus amigos desarrolladores.
+                  Podría ser útil para ellos.
+                </p>
               </li>
             </ol>
             <p>No olvides <a href="https://join.slack.com/t/react-basics/shared_invite/enQtMzM4MDMyNzM5NjgxLTMxYzcwMDMwYmNkZGIxNWFkZGZhMDVmNWU3OTQ3ZDhlYmZhOWU0NTkwMTdkNzg5ZTJhNWE3MDJlNTc3OGU4YjA" target="_blank" rel="noopener noreferrer">unirte a la discusión en Slack</a></p>

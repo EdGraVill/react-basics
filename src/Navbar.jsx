@@ -1,4 +1,3 @@
-// @flow
 import React from 'react';
 
 import navImg from './assets/IMG_0104.jpg';

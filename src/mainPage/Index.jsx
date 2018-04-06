@@ -1,8 +1,8 @@
-// @flow
 import React, { Fragment } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Nav from 'rb-navbar';
 
+import './gatsby.css';
 import './normalize.css';
 import './styles.css';
 

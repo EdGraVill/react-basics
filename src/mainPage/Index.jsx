@@ -44,10 +44,10 @@ const Index = () => (
         }]}
       />
       <Route exact path="/" component={Home} />
-      <Route exact path="/components" component={Components} />
-      <Route exact path="/navbar" component={Navbar} />
-      <Route exact path="/button" component={Button} />
-      <Route exact path="/carrousel" component={Carrousel} />
+      <Route path="/components" component={Components} />
+      <Route path="/navbar" component={Navbar} />
+      <Route path="/button" component={Button} />
+      <Route path="/carrousel" component={Carrousel} />
     </Fragment>
   </Router>
 );

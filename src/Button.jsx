@@ -145,7 +145,7 @@ function onClick() {
                   />
                 </div>
                 <aside>
-                  <Prism language="jsx" lineHighlight="11-16">
+                  <Prism language="jsx" lineHighlight="13">
                     {`
 this.state = {
   textSpinnerButton: ${this.state.textSpinnerButton ? 'true' : 'false'}
@@ -192,7 +192,7 @@ function onClick() {
                   />
                 </div>
                 <aside>
-                  <Prism language="jsx" lineHighlight="11-16">
+                  <Prism language="jsx" lineHighlight="13">
                     {`
 this.state = {
   fillerButton: ${this.state.fillerButton ? 'true' : 'false'}
@@ -247,7 +247,7 @@ function onClick() {
                   />
                 </div>
                 <aside>
-                  <Prism language="jsx" lineHighlight="18-24">
+                  <Prism language="jsx" lineHighlight="12-18;21;28-35">
                     {`
 this.state = {
   fillerNumberButton: ${this.state.fillerNumberButton}
@@ -262,7 +262,9 @@ function onClick() {
 function onChange(event) {
   const { value } = event.target;
 
-  this.setState({ fillerNumberButton: Number(value) });
+  this.setState({
+    fillerNumberButton: Number(value),
+  });
 }
 
 <Button
@@ -307,7 +309,7 @@ function onChange(event) {
                 text="Activar de nuevo ;)"
               />
             )}
-            <Prism language="jsx" lineHighlight="26-31">
+            <Prism language="jsx" lineHighlight="11-12;14-15;18">
               {`
 this.state = {
   buttonActive: ${this.state.buttonActive ? 'true' : 'false'}
@@ -318,15 +320,6 @@ function onClick() {
     buttonActive: !this.state.buttonActive,
   });
 }
-
-<input
-  type="range"
-  min="0"
-  max="1"
-  step="0.0001"
-  onChange={onChange}
-  value={this.state.fillerNumberButton}
-/>
 
 const style = this.state.buttonActive ?
   {} : { backgroundColor: '#ecf0f1', color: '#7f8c8d' };
@@ -379,7 +372,7 @@ const text = this.state.buttonActive ?
               {' '}<strong>text</strong>. Esto es algo obvio, porque en los otros
               dos, pues... sencillamente no hay texto.
             </p>
-            <Prism language="jsx" lineHighlight="18-25">
+            <Prism language="jsx" lineHighlight="20;22;24">
               {`
 this.state = {
   textButtonLoaded: ${this.state.textButtonLoaded ? 'true' : 'false'}
@@ -454,7 +447,7 @@ function onClick() {
               }}
               text="Presióname"
             />
-            <Prism language="jsx" lineHighlight="20-37">
+            <Prism language="jsx" lineHighlight="22-28;31-34">
               {`
 this.state = {
   styleButtonLoaded: ${this.state.styleButtonLoaded ? 'true' : 'false'}

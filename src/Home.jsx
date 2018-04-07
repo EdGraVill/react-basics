@@ -69,6 +69,27 @@ const Home = () => (
           <img src={carrouselImg} alt="Carrousel Logo" />
         </Link>
       </article>
+      <p>
+        Hay dos componentes dentro de este sitio web que no se han publicado de forma oficial porque
+        se encuentran en estado alfa, pero que si eres observador ya los habrás notado:
+      </p>
+      <ul>
+        <li>
+          <p>
+            <strong>Code:</strong> Es el componente que se usar para mostrar el código con estilos
+            similares a los de un editor de texto. El cual usa el motor de Prismjs, pero con algunas
+            mejoras.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Always On Top:</strong> Este componente es más pre alfa que otra cosa, porque su
+            función, es arrastrar un elemento por la pantalla mientras hacemos scroll sin importar
+            las dimensiones del componente que queramos arrastrar. Inclusive, poner un tope es
+            posible.
+          </p>
+        </li>
+      </ul>
     </div>
   </div>
 );

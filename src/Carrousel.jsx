@@ -159,7 +159,7 @@ function data() {
                 />
               </AoT>
             </div>
-            <Prism language="jsx" lineHighlight="11-12">
+            <Prism language="jsx" lineHighlight="13-14">
               {`
 this.state = {
   carrouselPosition: ${this.state.ej2},
@@ -209,7 +209,7 @@ function goTo(position) {
                 text="Siguiente"
               />
             </div>
-            <Prism language="jsx" lineHighlight="11-22">
+            <Prism language="jsx" lineHighlight="10-23">
               {`
 // this.state.carrouselPosition = ${this.state.ej2}
 import Button from 'rb-buttons'; // <- Componente muy recomendable.
@@ -257,7 +257,7 @@ function goTo(position) {
                 }}
               />
             </div>
-            <Prism language="jsx" lineHighlight="14-15">
+            <Prism language="jsx" lineHighlight="12;15">
               {`
 this.state = {
   carrouselPosition: ${this.state.ej3},
@@ -270,9 +270,9 @@ function goTo(position) {
 }
 
 <Carrousel
+  indicator
   data={data()}
   position={this.state.carrouselPosition}
-  indicator
   indicatorOnClick={goTo}
   style={{
     backgroundColor: '#ecf0f1',

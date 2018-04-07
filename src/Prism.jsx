@@ -48,23 +48,41 @@ class PrismComponent extends Component<PropsType> {
       lineHighlight,
     } = this.props;
 
+    let lineHighlightComponent = null;
+
+    if (lineHighlight) {
+      lineHighlightComponent = lineHighlight.includes(';') ? lineHighlight.split(';').map(line => (
+        <div
+          className="line-highlight"
+          style={{
+            top: !line.includes('-') ?
+              `calc(${Number(line) * 20}px - .2rem)` :
+              `calc(${Number(line.split('-')[0]) * 20}px - .2rem)`,
+            height: !line.includes('-') ?
+              '20px' :
+              `${((Number(line.split('-')[1]) - Number(line.split('-')[0])) + 1) * 20}px`,
+          }}
+        />
+      )) : (
+        <div
+          className="line-highlight"
+          style={{
+            top: !lineHighlight.includes('-') ?
+              `calc(${Number(lineHighlight) * 20}px - .2rem)` :
+              `calc(${Number(lineHighlight.split('-')[0]) * 20}px - .2rem)`,
+            height: !lineHighlight.includes('-') ?
+              '20px' :
+              `${((Number(lineHighlight.split('-')[1]) - Number(lineHighlight.split('-')[0])) + 1) * 20}px`,
+          }}
+        />
+      );
+    }
+
     return (
       <pre
         className={`language-${language}`}
       >
-        {lineHighlight && (
-          <div
-            className="line-highlight"
-            style={{
-              top: !lineHighlight.includes('-') ?
-                `calc(${Number(lineHighlight) * 20}px - .2rem)` :
-                `calc(${Number(lineHighlight.split('-')[0]) * 20}px - .2rem)`,
-              height: !lineHighlight.includes('-') ?
-                '20px' :
-                `${((Number(lineHighlight.split('-')[1]) - Number(lineHighlight.split('-')[0])) + 1) * 20}px`,
-            }}
-          />
-        )}
+        {lineHighlightComponent}
         <code
           className={`language-${language}`}
           ref={(ref) => { this.code = ref; }}
